@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>GPS处理工具</title>
+  <script crossorigin type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script crossorigin type="text/javascript"
+    src="http://api.map.baidu.com/getscript?v=2.0&ak=xk8RWRGCjaSQGLu7UmxvfmL9X3fhG7Bm"></script>
+  <style>
+    #map {
+      width: 68%;
+      height: 89%;
+      position: absolute;
+      margin: 2.5%;
+      box-shadow: 2px 2px 10px #ccc;
+      border: 1px solid #EED;
+      border-radius: 10px;
+      margin-left: 29.5%;
+      overflow: scroll;
+    }
+
+    #searchBox {
+      position: absolute;
+      width: 26%;
+      margin: 2.5%;
+      height: 89%;
+      box-shadow: 2px 2px 10px #ccc;
+      border: 1px solid #EED;
+      border-radius: 10px;
+    }
+
+    .keyid {
+      transition: all 1s;
+      border: 1px solid #ccc;
+      padding: 4px 0px;
+      width: 65%;
+      border-radius: 3px;
+      padding-left: 5px;
+      margin-left: 5px;
+      margin-top: 10px;
+    }
+
+    .keysubmit {
+      transition: all 1s;
+      border: 1px solid #ccc;
+      padding: 4px 0px;
+      width: 65%;
+      border-radius: 3px;
+      padding-left: 5px;
+      margin-left: 5px;
+      margin-top: 10px;
+    }
+
+    .searchinput {
+      transition: all 1s;
+      border: 1px solid #ccc;
+      padding: 4px 0px;
+      width: 65%;
+      border-radius: 3px;
+      padding-left: 5px;
+      margin-left: 5px;
+      margin-top: 10px;
+    }
+
+    input:focus {
+      box-shadow: 2px 2px 5px rgba(110, 110, 255, 0.5);
+    }
+
+    button {
+      background-color: #ddd;
+      color: dimgrey;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      height: 25px;
+      width: 45px;
+      margin-top: 10px;
+      margin-left: 5px;
+    }
+
+    #resultTable {
+      border: 1px solid #eee;
+      border-collapse: collapse;
+      margin: 10px;
+    }
+
+    td {
+      border: 1px solid #eee;
+    }
+
+    #model {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #8e8e8e;
+      opacity: 0.7;
+      z-index: 999;
+    }
+
+    #setkey {
+      margin: 0 auto;
+      width: 300px;
+    }
+
+    .keyinput {
+      display: block;
+      margin: 17px auto;
+    }
+
+    .keysubmit {
+      display: block;
+      margin: 0 auto;
+    }
+
+    #offline {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #8e8e8e;
+      opacity: 0.7;
+      z-index: 999;
+      line-height: 400px;
+      font-size: 25px;
+      text-align: center;
+      color: white;
+    }
+  </style>
+</head>
+
+<body style="margin: 0; padding: 0">
+  <div id="offline">您目前处于离线状态，请检查网络连接(点击关闭)</div>
+  <div id="model">
+    <div id="setkey">
+      <form id="keyform">
+        <input class="keyinput" placeholder="Baidu web KEY"></input>
+        <input class="keysubmit" type="submit"></input>
+      </form>
+    </div>
+  </div>
+  <div id="searchBox">
+    <form id="search">
+      <input class="searchinput" placeholder="地址" autofocus></input>
+      <button type="submit">搜索</button>
+    </form>
+    <div id="result" style="display: none">
+      <table id="resultTable">
+        <tr>
+          <td>Comprehension</td>
+          <td name="comprehension"></td>
+        </tr>
+        <tr>
+          <td>Confidence</td>
+          <td name="confidence"></td>
+        </tr>
+        <tr>
+          <td>level</td>
+          <td name="level"></td>
+        </tr>
+        <tr>
+          <td>longitude</td>
+          <td name="lng"></td>
+        </tr>
+        <tr>
+          <td>latitude</td>
+          <td name="lat"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="map"></div>
+  <script>
+    require('./renderer.js')
+  </script>
+</body>
+
+</html>
