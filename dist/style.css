@@ -1,0 +1,193 @@
+#map {
+    width: 68%;
+    height: 89%;
+    position: absolute;
+    margin: 2.5%;
+    box-shadow: 2px 2px 10px #ccc;
+    border: 1px solid #EED;
+    border-radius: 10px;
+    margin-left: 29.5%;
+    overflow: scroll;
+  }
+
+  #searchBox {
+    position: absolute;
+    width: 26%;
+    margin: 2.5%;
+    height: 89%;
+    box-shadow: 2px 2px 10px #ccc;
+    border: 1px solid #EED;
+    border-radius: 10px;
+  }
+
+  .keyid {
+    transition: all 1s;
+    border: 1px solid #ccc;
+    padding: 4px 0px;
+    width: 65%;
+    border-radius: 3px;
+    padding-left: 5px;
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+
+  .keysubmit {
+    transition: all 1s;
+    border: 1px solid #ccc;
+    padding: 4px 0px;
+    width: 65%;
+    border-radius: 3px;
+    padding-left: 5px;
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+
+  .searchinput {
+    transition: all 1s;
+    border: 1px solid #ccc;
+    padding: 4px 0px;
+    width: 57%;
+    border-radius: 3px;
+    padding-left: 5px;
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+
+  input:focus {
+    box-shadow: 2px 2px 5px rgba(110, 110, 255, 0.5);
+  }
+
+  button {
+    background-color: #ddd;
+    color: dimgrey;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    height: 25px;
+    width: 45px;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+  #resultTable {
+    border: 1px solid #eee;
+    border-collapse: collapse;
+    margin: 10px;
+  }
+
+  td {
+    border: 1px solid #eee;
+  }
+
+  .model {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #8e8e8e;
+    opacity: 0.7;
+    z-index: 999;
+  }
+
+  #setkey {
+    margin: 0 auto;
+    width: 300px;
+  }
+
+  .keyinput {
+    display: block;
+    margin: 17px auto;
+  }
+
+  .keysubmit {
+    display: block;
+    margin: 0 auto;
+  }
+
+  #offline {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #8e8e8e;
+    opacity: 0.7;
+    z-index: 999;
+    line-height: 400px;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+  }
+
+  .selectlist {
+    margin-top: 30px;
+    display: block;
+    margin: 40px auto 20px;
+  }
+
+  #selecttext {
+    width: 400px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: bolder;
+    margin: 57px auto -15px;
+  }
+
+  .databox {
+    transition: all 1s;
+    display: none;
+    font-size: 12px;
+    position: absolute;
+    overflow: scroll;
+    z-index: 1000;
+    background-color: #eaeaea;
+    border: 1px solid #d6d6d6;
+    border-radius: 20px;
+    width: 95%;
+    height: 95%;
+    margin: 1% 2% 2% 2%;
+    box-shadow: 1px 1px 20px 0px #777;
+  }
+
+  .processbox {
+    display: none;
+    position: absolute;
+    width: 60%;
+    height: 300px;
+    border: 1px solid #eee;
+    margin: 100px auto;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 1px #aaa;
+    background-color: white;
+    z-index: 1000;
+    text-align: center;
+  }
+
+  .process {
+    width: 90%;
+    border: 1px solid #aaa;
+    margin-left: 5%;
+    height: 30px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .processbackground {
+    transition: all 1s;
+    background-color: #777;
+    width: 0%;
+    height: 100%;
+  }
+
+  #processtext {
+    transition: all 1s;
+    width: 100%;
+    line-height: 100px;
+  }
+
+  #savefile {
+    display: none;
+    width: 100%;
+  }

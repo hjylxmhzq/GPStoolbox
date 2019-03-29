@@ -27,12 +27,6 @@ let menus = [{
                         ipcRenderer.send('openFile', res);
                     })
                 }
-            },
-            {
-                label: '新建窗口',
-                click: function () {
-                    console.log('新建窗口')
-                }
             }
         ]
     },
@@ -49,16 +43,25 @@ let menus = [{
         ]
     },
     {
+        label: '地理编码',
+        submenu: [{
+                label: '当前打开文件',
+                click: function(event) {
+                    document.querySelector('#model1').style.display = 'block';
+                    document.querySelector('#databox').style.display = 'none';
+                }
+            },
+        ]
+    },
+    {
         label: '设置',
         submenu: [{
                 label: '设置百度查询key',
                 click: function (event) {
                     document.querySelector('#model').style.display = 'block';
+                    document.querySelector('#databox').style.display = 'none';
                 }
             },
-            {
-                label: '搜索'
-            }
         ]
     }
 ]

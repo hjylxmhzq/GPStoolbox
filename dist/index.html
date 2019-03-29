@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>GeoTools</title>
+  <script crossorigin type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script crossorigin type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=xk8RWRGCjaSQGLu7UmxvfmL9X3fhG7Bm"></script>
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+
+<body style="margin: 0; padding: 0">
+  <div id="offline">您目前处于离线状态，请检查网络连接(点击关闭)</div>
+  <div id="model" class="model">
+    <div id="setkey">
+      <form id="keyform">
+        <input class="keyinput" placeholder="Baidu web KEY"></input>
+        <input class="keysubmit" type="submit"></input>
+      </form>
+    </div>
+  </div>
+  <div id="model1" class="model">
+      <div id="selectItem">
+          <form id="keyform1">
+            <div class="selectlist" id="selecttext">选择查找列</div>
+            <select class="selectlist" id="selectlist"></select>
+            <input id="listsubmit" class="keysubmit" type="submit"></input>
+          </form>
+        </div>
+      </div>
+  </div>
+  <div class="processbox" id="processbox">
+    <p id="processtext">进度</p>
+    <div class="process">
+      <div class="processbackground" id="processbackground"></div>
+    </div>
+  </div>
+  <div class="databox" id="databox">
+    <button id="savefile">保存为csv</button>
+    <table id="datatable"></table>
+  </div>
+  <div id="searchBox">
+    <form id="search">
+      <input class="searchinput" placeholder="地址" autofocus></input>
+      <button type="submit">搜索</button>
+    </form>
+    <div id="result" style="display: none">
+      <table id="resultTable">
+        <tr>
+          <td>Comprehension</td>
+          <td name="comprehension"></td>
+        </tr>
+        <tr>
+          <td>Confidence</td>
+          <td name="confidence"></td>
+        </tr>
+        <tr>
+          <td>level</td>
+          <td name="level"></td>
+        </tr>
+        <tr>
+          <td>longitude</td>
+          <td name="lng"></td>
+        </tr>
+        <tr>
+          <td>latitude</td>
+          <td name="lat"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="map"></div>
+  <script>
+    require('./main_bundle.js')
+  </script>
+</body>
+
+</html>

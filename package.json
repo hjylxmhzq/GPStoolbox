@@ -4,15 +4,17 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "webpack": "webpack --mode=development",
+    "pack": "webpack --mode=production && electron-packager . GeoTools --win --out GeoTools --arch=x64 --version 1.4.14 --overwrite --ignore=node_modules",
+    "start": "webpack --mode=development && electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/hjylxmhzq/GPStoolbox.git",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "GPS",
+    "tool",
+    "route",
+    "Geocoding"
   ],
   "author": "GitHub",
   "license": "CC0-1.0",
@@ -20,9 +22,24 @@
     "css-loader": "^2.1.1",
     "electron": "^4.1.1",
     "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.3.1",
+    "request-promise": "^4.2.4",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
-    "webpack-dev-server": "^3.2.1",
-    "webpack-target-electron-renderer": "^0.4.0"
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "css-loader": "^2.1.1",
+    "electron": "^4.1.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.3.1",
+    "request-promise": "^4.2.4",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
   }
 }
